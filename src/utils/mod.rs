@@ -37,6 +37,13 @@ pub mod Utils {
         let user_uid: Arc<Mutex<UserUID>> = Arc::new(Mutex::new(UserUID("".to_string())));
         let user: Arc<Mutex<Option<User>>> = Arc::new(Mutex::new(None));
         let database_rw = Arc::new(RwLock::new(database));
+        database_rw.write().await.drop_tables().await?;
+        database_rw
+            .write()
+            .await
+            .create_tables_if_not_exist()
+            .await?;
+
         Ok((user_uid, user, database_rw, id_token))
     }
 }

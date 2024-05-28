@@ -54,7 +54,8 @@ impl Firebase {
     */
     pub async fn new() -> Firebase {
         dotenv::dotenv().ok();
-        let key: String = env::var("SERVICE_ACCOUNT").expect("Firebase account key must be set");
+        let key: String =
+            env::var("SERVICE_ACCOUNT").expect("Firebase Service account key must be set");
         let service_account = CustomServiceAccount::from_json(&key).unwrap();
         let _service_account = CustomServiceAccount::from_json(&key).unwrap();
         let app = App::live(service_account.into()).await.unwrap();
