@@ -16,6 +16,7 @@ FIREBASE_API_KEY=
 SERVICE_ACCOUNT='service account'
 ```
 
+
 make sure to have SERVICE_ACCOUNT (Firebase Service Account json) json data into quotes preferably  => ''.
 
 Tests can be run with the following command:
