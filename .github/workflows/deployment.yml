@@ -1,0 +1,18 @@
+name: Testing the application
+run-name: Rust Exchange
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+      - name: Build and test
+        run: cargo test
+
+      - uses: actions-rs/cargo@v1
+        with:
+            command: test
+            args: -- --test-threads=1
