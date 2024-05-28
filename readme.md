@@ -33,3 +33,5 @@ Firebase authentication is tested.
 As this is just a poc to showcase how things can be done, i rushed through the code and didn't follow the best practices (not having unwraps, handle errors properly etc).
 
 **I didn't add any logging, error handling, and proper response handling.**
+
+Graphql QL playground can be accessed at `http://localhost:4000/` once the server is launched
