@@ -1,5 +1,5 @@
 name: Testing the application
-run-name: Rust Exchange
+run-name: Data intuitive
 on: [push]
 jobs:
   build:
