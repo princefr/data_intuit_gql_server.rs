@@ -99,10 +99,10 @@ impl UserTrait for PostGreClient {
         let random_string = uuid::Uuid::new_v4().to_string();
         let email = format!("{}@gmail.com", random_string);
         let user = User {
-            id: Some(random_string),
+            id: Some(random_string.clone()),
             name: "test".to_string(),
             email,
-            password: "password".to_string(),
+            password: random_string.clone(),
             created_at: Some(Utc::now()),
             updated_at: Some(Utc::now()),
         };
@@ -117,7 +117,7 @@ impl UserTrait for PostGreClient {
             id: Some(uuid.to_string()),
             name: "test".to_string(),
             email,
-            password: "password".to_string(),
+            password: uuid.to_string(),
             created_at: Some(Utc::now()),
             updated_at: Some(Utc::now()),
         };
