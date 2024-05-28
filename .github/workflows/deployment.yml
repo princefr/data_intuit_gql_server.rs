@@ -17,7 +17,7 @@ jobs:
           echo "POSTGRES_DATABASE=${{ secrets.POSTGRES_DATABASE }}" >> .env
           echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> .env
           echo "FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }}" >> .env
-          echo "SERVICE_ACCOUNT=${{ secrets.SERVICE_ACCOUNT }}" >> .env
+          echo "SERVICE_ACCOUNT='${{ secrets.SERVICE_ACCOUNT }}'" >> .env
       - name: Build and test
         run: cargo test
 
